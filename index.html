@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Korean & IELTS Language Institute | Machhapokhari, Kathmandu</title>
+    <title>Alpha Global Education Consultancy | Machhapokhari, Kathmandu</title>
     
-    <!-- Favicon (Browser Tab Icon) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="https://th.bing.com/th/id/OIP.gbXDI6c7wRLzpEl_2gBAXwHaE8?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
     
-    <meta name="description" content="Master IELTS and Korean Language (EPS-TOPIK) with Alpha Korean Institute at Machhapokhari, Buspark, Kathmandu. Expert coaching, mock tests, and visa guidance.">
+    <meta name="description" content="Premier 5-Star Consultancy for IELTS, Korean (EPS-TOPIK), and Japanese (JLPT/NAT) Language Preparation at Machhapokhari, Buspark, Kathmandu.">
     
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --accent: #059669;
-            --dark: #0f172a;
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --gold: #d97706;
+            --gold-light: #f59e0b;
+            --dark: #090d16;
+            --dark-card: #111827;
             --light: #f8fafc;
             --gray: #64748b;
             --card-bg: #ffffff;
@@ -35,12 +37,56 @@
 
         body {
             background-color: var(--light);
-            color: var(--dark);
+            color: #1e293b;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Subtle Fade-in Animation utility */
+        /* Ambient Floating Blobs Animation */
+        .blob-container {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.12;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-light);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--gold-light);
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(60px, 80px) scale(1.1); }
+            100% { transform: translate(-40px, 40px) scale(0.95); }
+        }
+
+        /* Subtle Fade-in Utility */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -56,8 +102,8 @@
 
         /* Header / Navbar */
         header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -75,34 +121,31 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.02);
+            gap: 0.4rem;
+            letter-spacing: -0.02em;
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--gold);
         }
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             position: relative;
             padding-bottom: 4px;
             transition: color 0.3s ease;
@@ -115,7 +158,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--primary);
+            background-color: var(--gold);
             transition: width 0.3s ease;
         }
 
@@ -123,64 +166,63 @@
             width: 100%;
         }
 
-        /* Hero Section with Ambient Motion */
+        /* Hero Section */
         .hero {
-            background: radial-gradient(circle at 50% 120%, #1e3a8a 0%, #0f172a 70%);
+            background: radial-gradient(circle at 50% 120%, #0f172a 0%, #020617 100%);
             color: white;
-            padding: 6rem 1.5rem;
+            padding: 6.5rem 1.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(0,0,0,0) 50%);
-            animation: pulse 8s infinite alternate ease-in-out;
-            pointer-events: none;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
+            border-bottom: 2px solid rgba(217, 119, 6, 0.2);
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
+        .stars-badge {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
         .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            color: #38bdf8;
+            background: rgba(217, 119, 6, 0.15);
+            color: #fbbf24;
             padding: 0.4rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
+            font-weight: 600;
             display: inline-block;
             margin-bottom: 1.25rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(217, 119, 6, 0.3);
             backdrop-filter: blur(4px);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 1.2rem;
-            line-height: 1.2;
+            line-height: 1.15;
             letter-spacing: -0.02em;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #94a3b8;
             margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
@@ -191,41 +233,41 @@
         }
 
         .btn {
-            padding: 0.9rem 2rem;
+            padding: 0.9rem 2.2rem;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--gold) 0%, #b45309 100%);
             color: white;
-            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
         }
 
         .btn-primary:hover {
-            background: var(--primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.5);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(4px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
-        /* Services / Classes Section */
+        /* Services Grid (3 Columns) */
         .section {
-            padding: 5rem 1.5rem;
+            padding: 5.5rem 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -239,6 +281,7 @@
             font-size: 2.25rem;
             font-weight: 800;
             color: var(--dark);
+            letter-spacing: -0.02em;
         }
 
         .section-title p {
@@ -247,9 +290,9 @@
             font-size: 1.1rem;
         }
 
-        .grid-2 {
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
@@ -257,64 +300,64 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
-            border-color: rgba(37, 99, 235, 0.3);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
+            border-color: var(--gold-light);
         }
 
         .card-tag {
             font-size: 0.75rem;
             text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--gold);
             margin-bottom: 0.5rem;
         }
 
         .card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         .card ul {
             list-style: none;
             margin-top: 1.5rem;
+            border-top: 1px dashed var(--border);
+            padding-top: 1rem;
         }
 
         .card ul li {
-            padding: 0.5rem 0;
-            color: var(--gray);
+            padding: 0.4rem 0;
+            color: #334155;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
         }
 
         .card ul li::before {
-            content: "✓";
-            color: var(--accent);
-            font-weight: bold;
-            background: rgba(5, 150, 105, 0.1);
-            width: 22px;
-            height: 22px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 0.75rem;
+            content: "★";
+            color: var(--gold);
+            font-size: 0.8rem;
         }
 
         /* Features Section */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
 
@@ -328,11 +371,11 @@
 
         .feature-box:hover {
             transform: translateY(-4px);
-            border-color: var(--primary);
+            border-color: var(--gold);
         }
 
         .feature-box h4 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
@@ -342,22 +385,76 @@
             color: var(--gray);
         }
 
-        /* Contact Details Card */
+        /* Contact Details Card with Profile */
         .contact-card {
-            background: var(--dark);
+            background: var(--dark-card);
             color: white;
             border-radius: 20px;
             padding: 3.5rem 2.5rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
             position: relative;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+            margin-bottom: 1.25rem;
+        }
+
+        .profile-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .profile-role {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .profile-phone {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .profile-phone:hover {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: white;
         }
 
         .contact-info p {
@@ -374,7 +471,8 @@
         }
 
         .info-icon {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(217, 119, 6, 0.15);
+            color: var(--gold-light);
             width: 44px;
             height: 44px;
             border-radius: 10px;
@@ -383,6 +481,7 @@
             justify-content: center;
             font-size: 1.2rem;
             flex-shrink: 0;
+            border: 1px solid rgba(217, 119, 6, 0.2);
         }
 
         .info-item strong {
@@ -402,8 +501,8 @@
             justify-content: center;
             gap: 0.5rem;
             width: 100%;
-            padding: 1rem;
-            background: var(--accent);
+            padding: 0.9rem;
+            background: linear-gradient(135deg, var(--gold) 0%, #b45309 100%);
             color: white;
             font-weight: 700;
             border-radius: 8px;
@@ -413,8 +512,23 @@
         }
 
         .direct-action-btn:hover {
-            opacity: 0.9;
             transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 4rem;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+        }
+
+        .map-section iframe {
+            width: 100%;
+            height: 400px;
+            display: block;
         }
 
         /* Footer */
@@ -436,14 +550,21 @@
 </head>
 <body>
 
+    <!-- Ambient Animated Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Alpha <span>Korean & IELTS</span></a>
+            <a href="#" class="logo">Alpha Global <span>Education Consultancy</span></a>
             <ul class="nav-links">
-                <li><a href="#services">Courses</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#why-us">Why Us</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#location">Location</a></li>
             </ul>
         </div>
     </header>
@@ -451,11 +572,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content fade-in">
+            <span class="stars-badge">★★★★★</span>
             <span class="hero-badge">Machhapokhari, Buspark, Kathmandu</span>
-            <h1>Your Gateway to Global Education & Work Opportunities</h1>
-            <p>Master IELTS band strategies and Korean EPS-TOPIK exams with expert instructors at Alpha Korean Institute.</p>
+            <h1>Premier Language Classes & Visa Processing Consultancy</h1>
+            <p>Empowering students to achieve world-class scores in IELTS, Korean (EPS-TOPIK), and Japanese (JLPT/NAT) examinations.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Contact Us</a>
+                <a href="#contact" class="btn btn-primary">Book Free Counseling</a>
                 <a href="#services" class="btn btn-secondary">Explore Courses</a>
             </div>
         </div>
@@ -464,34 +586,47 @@
     <!-- Services / Courses -->
     <section id="services" class="section">
         <div class="section-title fade-in">
-            <h2>Our Specialized Programs</h2>
-            <p>Intensive language courses targeted for fast scoring and exam readiness.</p>
+            <h2>Our 5-Star Language Programs</h2>
+            <p>Targeted coaching tailored for high scores and direct visa guidance.</p>
         </div>
 
-        <div class="grid-2">
+        <div class="grid-3">
             <!-- IELTS Card -->
             <div class="card fade-in">
                 <div class="card-tag">International English</div>
                 <h3>IELTS Preparation</h3>
-                <p>Comprehensive training covering Listening, Reading, Writing, and Speaking modules.</p>
+                <p>Master Listening, Reading, Writing, and Speaking with certified strategies.</p>
                 <ul>
-                    <li>Target Band 7.0+ Focused Preparation</li>
-                    <li>Weekly Full Mock Tests & Detailed Scoring</li>
-                    <li>One-on-One Speaking Practice Sessions</li>
-                    <li>Updated Academic & General Training Material</li>
+                    <li>Target Band 7.0+ Curriculum</li>
+                    <li>Weekly Mock Exams & Band Analysis</li>
+                    <li>Personalized Speaking Sessions</li>
+                    <li>Comprehensive Learning Resources</li>
                 </ul>
             </div>
 
             <!-- Korean Card -->
             <div class="card fade-in">
-                <div class="card-tag">Language Mastery</div>
-                <h3>Korean Language Classes</h3>
-                <p>Targeted coaching for EPS-TOPIK examination, work visas, and higher education in Korea.</p>
+                <div class="card-tag">Working & Student Visa</div>
+                <h3>Korean Language</h3>
+                <p>Focused training for EPS-TOPIK and general university admission in South Korea.</p>
                 <ul>
-                    <li>EPS-TOPIK Examination Focus</li>
-                    <li>Structured Grammar & Vocabulary Drills</li>
-                    <li>UBT / CBT Computerized Practice Software</li>
-                    <li>Native-Level Qualified Instructors</li>
+                    <li>EPS-TOPIK Specialized Classes</li>
+                    <li>Grammar & Vocabulary Intensive Drills</li>
+                    <li>Computerized UBT / CBT Practice</li>
+                    <li>High Exam Pass-Rate Success</li>
+                </ul>
+            </div>
+
+            <!-- Japanese Card -->
+            <div class="card fade-in">
+                <div class="card-tag">Study & Career in Japan</div>
+                <h3>Japanese Language</h3>
+                <p>Preparation for JLPT, NAT-TEST, and student visa application processes.</p>
+                <ul>
+                    <li>N5, N4 & N3 Level Preparation</li>
+                    <li>Kanji, Vocabulary & Listening Practice</li>
+                    <li>Japan Student Visa Application Guidance</li>
+                    <li>Experienced Japanese Language Tutors</li>
                 </ul>
             </div>
         </div>
@@ -500,41 +635,52 @@
     <!-- Why Choose Us -->
     <section id="why-us" class="section">
         <div class="section-title fade-in">
-            <h2>Why Alpha Korean & IELTS?</h2>
-            <p>Proven preparation strategies with qualified individuals.</p>
+            <h2>Why Alpha Global Consultancy?</h2>
+            <p>Dedicated commitment toward your academic and international career goals.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-box fade-in">
+                <h4>5-Star Rated Faculty</h4>
+                <p>Instructors with proven track records and years of success in language coaching.</p>
+            </div>
+            <div class="feature-box fade-in">
                 <h4>Prime Location</h4>
-                <p>Located directly at Machhapokhari, near Buspark for hassle-free commuting.</p>
+                <p>Conveniently situated directly at Machhapokhari, near the central Buspark hub.</p>
             </div>
             <div class="feature-box fade-in">
-                <h4>Small Class Batches</h4>
-                <p>Focused attention for every individual to target weak modules faster.</p>
+                <h4>Flexible Class Timings</h4>
+                <p>Morning, day, and evening shifts tailored for working professionals and students.</p>
             </div>
             <div class="feature-box fade-in">
-                <h4>Flexible Shifts</h4>
-                <p>Morning, day, and evening classes tailored to fit your daily schedule.</p>
-            </div>
-            <div class="feature-box fade-in">
-                <h4>Mock Exam Suites</h4>
-                <p>Regular practice under real exam environments with feedback analysis.</p>
+                <h4>Free Counseling</h4>
+                <p>Comprehensive visa and career guidance provided directly by senior advisors.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact & Direct Profile Section -->
     <section id="contact" class="section">
         <div class="contact-card fade-in">
+            <!-- Profile Info -->
+            <div class="profile-container">
+                <img src="./rajanSir.jpeg" alt="Rajan Pandey" class="profile-img" onerror="this.src='https://via.placeholder.com/140?text=Rajan+Pandey'">
+                <h4 class="profile-name">Rajan Pandey</h4>
+                <p class="profile-role">Senior Advisor</p>
+                <a href="tel:+9779841937041" class="profile-phone">
+                    📞 +977 984-1937041
+                </a>
+            </div>
+
+            <!-- Contact Details & Action -->
             <div class="contact-info">
-                <h3>Visit Our Institute</h3>
-                <p>Drop by our location at Machhapokhari for detailed course counseling and registration.</p>
+                <h3>Visit Our Consultancy</h3>
+                <p>Drop by our location at Machhapokhari for personalized course guidance and trial sessions.</p>
                 
                 <div class="info-item">
                     <div class="info-icon">📍</div>
                     <div>
-                        <strong>Address</strong>
+                        <strong>Address Location</strong>
                         <span>Machhapokhari (Near Buspark Area), Kathmandu, Nepal</span>
                     </div>
                 </div>
@@ -542,37 +688,34 @@
                 <div class="info-item">
                     <div class="info-icon">📞</div>
                     <div>
-                        <strong>Phone / WhatsApp</strong>
-                        <span>+977 984-1937041 / 9707258752</span>
+                        <strong>Contact Numbers</strong>
+                        <span>+977 984-1937041 / +977 9707258752</span>
                     </div>
                 </div>
 
                 <div class="info-item">
                     <div class="info-icon">⏰</div>
                     <div>
-                        <strong>Class Hours</strong>
+                        <strong>Consultancy Hours</strong>
                         <span>Sunday - Friday: 6:00 AM - 6:00 PM</span>
                     </div>
                 </div>
-            </div>
 
-            <div style="display: flex; flex-direction: column; justify-content: center; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
-                <h4 style="font-size: 1.4rem; margin-bottom: 0.75rem;">Get in Touch Directly</h4>
-                <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.5rem;">Reach out via phone or visit our front desk during open hours to claim a free trial session.</p>
-                
-                <a href="tel:+977984-1937041" class="direct-action-btn">
-                    📞 Call Us Directly
-                </a>
-                <a href="https://wa.me/977984-1937041" target="_blank" class="direct-action-btn" style="background: #25D366; margin-top: 0.75rem;">
-                    💬 Chat on WhatsApp
+                <a href="https://wa.me/9779841937041" target="_blank" class="direct-action-btn" style="background: #25D366; margin-top: 1rem;">
+                    💬 Connect on WhatsApp
                 </a>
             </div>
+        </div>
+
+        <!-- Embedded Map -->
+        <div id="location" class="map-section fade-in">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.7155977518054!2d85.30537246298286!3d27.73514345807729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19002325db75%3A0x5fd3e8ee365dbbf8!2sAlpha%20Global%20Education%20Consultancy!5e1!3m2!1sen!2snp!4v1789547269180!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Alpha Korean & IELTS Institute. Machhapokhari, Buspark, Kathmandu.</p>
+        <p>&copy; Alpha Global Education Consultancy. Machhapokhari, Buspark, Kathmandu.</p>
     </footer>
 
 </body>
